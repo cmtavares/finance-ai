@@ -1,7 +1,7 @@
 import { Button } from "@/app/_components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/app/_components/ui/card";
 import { ScrollArea } from "@/app/_components/ui/scroll-area";
-import { TRANSACTIONS_PAYMENT_METHOD_ICONS } from "@/app/_constants/transactions";
+import { TRANSACTION_PAYMENT_METHOD_ICONS } from "@/app/_constants/transactions";
 import { formatCurrency } from "@/app/_utils/currency";
 import { Transaction, TransactionType } from "@prisma/client";
 import Image from "next/image";
@@ -30,7 +30,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
   return (
     <ScrollArea className="rounded-md border">
       <CardHeader className="flex-row items-center justify-between">
-        <CardTitle className="font-bod">Últimas Transações</CardTitle>
+        <CardTitle className="font-bold">Últimas Transações</CardTitle>
         <Button variant="outline" className="rounded-full font-bold" asChild>
           <Link href="/transactions">Ver mais</Link>
         </Button>
@@ -41,15 +41,13 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
             key={transaction.id}
             className="flex items-center justify-between"
           >
-            <div className="flex items-center gap-2">
-              <div className="rounded-lg bg-white bg-opacity-[3%] p-3">
+            <div className="flex items-center gap-3">
+              <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-white">
                 <Image
-                  src={
-                    TRANSACTIONS_PAYMENT_METHOD_ICONS[transaction.paymentMethod]
-                  }
+                  src={`/${TRANSACTION_PAYMENT_METHOD_ICONS[transaction.paymentMethod]}`}
                   height={20}
                   width={20}
-                  alt="Pix"
+                  alt="PIX"
                 />
               </div>
               <div>
