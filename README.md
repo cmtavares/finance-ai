@@ -1,6 +1,5 @@
 # Finance AI
-
-**Finance AI** is an advanced micro SaaS financial management platform designed to help users take control of their finances. It allows you to track expenses, manage budgets, and generate AI-powered reports for smarter insights.
+**Finance AI** is an advanced micro SaaS platform that helps users take control of their personal finances. With an intuitive interface, it allows users to track expenses, manage budgets, and generate AI-powered reports. The AI analyzes financial transactions and provides valuable insights to optimize spending, identify patterns, and make smarter financial decisions.
 
 ## 📌 Features
 
@@ -9,8 +8,6 @@
 📈 **Detailed reports and insights** - Generate custom reports to better understand your finances.\
 💳 **Transaction entries** - Allows you to register and manage an unlimited number of financial transactions, including expenses, income, and transfers.\
 💡 **Responsive and intuitive interface** - Optimized experience for all devices.\
-
----
 
 ## 🚀 How to Run
 
@@ -89,5 +86,3 @@ This project was developed using the following technologies:
 - **Clerk** - Authentication and user management.
 - **OpenAI API** - AI-powered features for expense analysis and insights.
 - **Stripe** - Payment processing for premium subscriptions.
-
----
