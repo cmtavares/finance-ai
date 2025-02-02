@@ -7,7 +7,6 @@
 🤖 **AI-powered expense analysis** - Identify patterns and discover savings opportunities.\
 📈 **Detailed reports and insights** - Generate custom reports to better understand your finances.\
 💳 **Transaction entries** - Allows you to register and manage an unlimited number of financial transactions, including expenses, income, and transfers.\
-💡 **Responsive and intuitive interface** - Optimized experience for all devices.
 
 ## 🚀 How to Run
 
