@@ -6,7 +6,7 @@
 📊 **Interactive financial dashboard** - Clearly and dynamically visualize your income and expenses.\
 🤖 **AI-powered expense analysis** - Identify patterns and discover savings opportunities.\
 📈 **Detailed reports and insights** - Generate custom reports to better understand your finances.\
-💳 **Transaction entries** - Allows you to register and manage an unlimited number of financial transactions, including expenses, income, and transfers.\
+💳 **Transaction entries** - Allows you to register and manage an unlimited number of financial transactions, including expenses, income, and transfers.
 
 ## 🚀 How to Run
 
