@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finance AI
 
-## Getting Started
+**Finance AI** is an advanced micro SaaS financial management platform designed to help users take control of their finances. It allows you to track expenses, manage budgets, and generate AI-powered reports for smarter insights.
 
-First, run the development server:
+## 📌 Features
+
+📊 **Interactive financial dashboard** - Clearly and dynamically visualize your income and expenses.\
+🤖 **AI-powered expense analysis** - Identify patterns and discover savings opportunities.\
+📈 **Detailed reports and insights** - Generate custom reports to better understand your finances.\
+💳 **Transaction entries** - Allows you to register and manage an unlimited number of financial transactions, including expenses, income, and transfers.\
+💡 **Responsive and intuitive interface** - Optimized experience for all devices.\
+
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Prerequisites
+
+Before getting started, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### 2️⃣ Installation
+
+To set up the project locally, follow these steps:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/cmtavares/finance-ai.git
+cd finance-ai
+
+# Install dependencies
+npm install  # or yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3️⃣ Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env` file in the project's root directory and configure the required environment variables. Example:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```ini
+DATABASE_URL="postgresql://user:password@host/database?sslmode=require"
 
-## Learn More
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
+CLERK_SECRET_KEY="your_clerk_secret_key"
 
-To learn more about Next.js, take a look at the following resources:
+# Stripe
+STRIPE_PREMIUM_PLAN_PRICE_ID="your_price_id"
+STRIPE_SECRET_KEY="your_stripe_secret_key"
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="your_publishable_key"
+STRIPE_WEBHOOK_SECRET="your_webhook_secret"
+NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL="your_customer_portal_url"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# OpenAI
+OPENAI_API_KEY="your_openai_api_key"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+APP_URL="http://localhost:3000"
+```
 
-## Deploy on Vercel
+### 4️⃣ Running the Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To start the project in development mode:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev  # or yarn dev
+```
+
+The project will be available at: [http://localhost:3000](http://localhost:3000) 🚀
+
+### 5️⃣ Building for Production
+
+To generate an optimized production version:
+
+```bash
+npm run build
+npm start
+```
+
+## 🛠️ Technologies Used
+
+This project was developed using the following technologies:
+
+- **Next.js** - Modern and efficient React framework.
+- **TypeScript** - Static typing for better security and productivity.
+- **Tailwind CSS** - Responsive and minimalist styling.
+- **Prisma** - Powerful ORM for databases.
+- **ESLint & Prettier** - Code quality and standardization.
+- **Clerk** - Authentication and user management.
+- **OpenAI API** - AI-powered features for expense analysis and insights.
+- **Stripe** - Payment processing for premium subscriptions.
+
+---
