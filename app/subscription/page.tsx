@@ -15,15 +15,21 @@ const SubscriptionPage = async () => {
   const user = await clerkClient().users.getUser(userId);
   const currentMonthTransactions = await getCurrentMonthTransactions();
   const hasPremiumPlan = user.publicMetadata.subscriptionPlan == "premium";
+  const hasBasicPlan = user.publicMetadata.subscriptionPlan == null;
   return (
     <>
       <Navbar />
       <div className="space-y-6 p-6">
-        <h1 className="text-2xl font-bold">Assinatura</h1>
+        <h1 className="text-2xl font-bold max-lg:text-xl">Assinatura</h1>
 
-        <div className="flex gap-6">
-          <Card className="w-[450px]">
-            <CardHeader className="border-b border-solid py-8">
+        <div className="flex gap-6 max-lg:flex-col max-lg:items-center max-lg:gap-4 max-lg:overflow-auto">
+          <Card className="w-[450px] max-lg:w-80">
+            <CardHeader className="relative border-b border-solid py-8">
+              {hasBasicPlan && (
+                <Badge className="absolute left-6 top-11 bg-primary/10 text-primary max-lg:left-4">
+                  Ativo
+                </Badge>
+              )}
               <h2 className="text-center text-2xl font-semibold">
                 Plano Básico
               </h2>
@@ -47,10 +53,10 @@ const SubscriptionPage = async () => {
             </CardContent>
           </Card>
 
-          <Card className="w-[450px]">
+          <Card className="w-[450px] max-lg:w-80">
             <CardHeader className="relative border-b border-solid py-8">
               {hasPremiumPlan && (
-                <Badge className="absolute left-6 top-12 bg-primary/10 text-primary">
+                <Badge className="absolute left-6 top-11 bg-primary/10 text-primary max-lg:left-4">
                   Ativo
                 </Badge>
               )}
