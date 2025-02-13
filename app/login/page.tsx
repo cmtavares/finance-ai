@@ -37,7 +37,7 @@ const LoginPage = async () => {
       {/* DIREITA */}
       <div className="relative hidden h-full w-full md:block">
         <Image
-          src="/login.png"
+          src="/login.svg"
           alt="Faça login"
           fill
           className="object-cover"
