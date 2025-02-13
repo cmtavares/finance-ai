@@ -34,7 +34,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="rounded-md border">
       <Table>
-        <TableHeader>
+        <TableHeader className="max-lg:hidden">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
@@ -52,7 +52,7 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody>
+        <TableBody className="max-lg:hidden">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
@@ -74,6 +74,14 @@ export function DataTable<TData, TValue>({
             </TableRow>
           )}
         </TableBody>
+        <TableRow>
+          <TableCell
+            colSpan={columns.length}
+            className="h-24 text-center lg:hidden"
+          >
+            Não é possível visualizar em dispositivos menores.
+          </TableCell>
+        </TableRow>
       </Table>
     </div>
   );

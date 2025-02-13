@@ -37,7 +37,7 @@ const DeleteTransactionButton = ({
           <TrashIcon />
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="rounded-lg max-lg:max-w-[350px]">
         <AlertDialogHeader>
           <AlertDialogTitle>Deseja deletar essa transação?</AlertDialogTitle>
           <AlertDialogDescription>

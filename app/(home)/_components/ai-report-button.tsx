@@ -48,12 +48,18 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
     // }}
     >
       <DialogTrigger asChild>
-        <Button variant="outline">
-          Relatório IA
-          <BotIcon />
-        </Button>
+        <div>
+          <Button variant="outline" className="hidden lg:flex">
+            Relatório IA
+            <BotIcon />
+          </Button>
+
+          <Button variant="outline" className="flex lg:hidden">
+            <BotIcon />
+          </Button>
+        </div>
       </DialogTrigger>
-      <DialogContent className="max-w-[600px]">
+      <DialogContent className="max-w-[600px] rounded-lg max-lg:max-w-80">
         {hasPremiumPlan ? (
           <>
             <DialogHeader>
@@ -73,6 +79,7 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
               <Button
                 onClick={handleGenerateReportClick}
                 disabled={reportIsLoading}
+                className="mb-2"
               >
                 {reportIsLoading && <Loader2Icon className="animate-spin" />}
                 Gerar relatório
@@ -91,7 +98,7 @@ const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
               <DialogClose asChild>
                 <Button variant="outline">Cancelar</Button>
               </DialogClose>
-              <Button asChild>
+              <Button asChild className="mb-2">
                 <Link href="/subscription">Assinar plano premium</Link>
               </Button>
             </DialogFooter>

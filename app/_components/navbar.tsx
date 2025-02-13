@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <NavbarMobile />
-      <nav className="flex justify-between border-b border-solid px-8 py-4 max-md:hidden">
+      <nav className="flex justify-between border-b border-solid px-8 py-4 max-lg:hidden">
         {/* ESQUERDA */}
         <div className="flex items-center gap-10">
           <Link href="/">

@@ -4,13 +4,13 @@ import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import { TRANSACTION_CATEGORY_LABELS } from "@/app/_constants/transactions";
 import { TotalExpensePerCategory } from "@/app/_data/get-dashboard/types";
 
-interface ExepensesPerCategoryProps {
+interface ExpensesPerCategoryProps {
   expensesPerCategory: TotalExpensePerCategory[];
 }
 
-const ExepensesPerCategory = ({
+const ExpensesPerCategory = ({
   expensesPerCategory,
-}: ExepensesPerCategoryProps) => {
+}: ExpensesPerCategoryProps) => {
   return (
     <ScrollArea className="col-span-2 h-full rounded-md border pb-6">
       <CardHeader>
@@ -34,4 +34,4 @@ const ExepensesPerCategory = ({
   );
 };
 
-export default ExepensesPerCategory;
+export default ExpensesPerCategory;

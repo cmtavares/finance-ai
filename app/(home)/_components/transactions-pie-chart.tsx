@@ -62,11 +62,11 @@ const TransactionsPieChart = ({
   ];
   return (
     <ScrollArea>
-      <Card className="flex flex-col p-4">
+      <Card className="flex h-full flex-col p-4 max-lg:min-h-[450px]">
         <CardContent className="flex-1 pb-0">
           <ChartContainer
             config={chartConfig}
-            className="mx-auto aspect-square max-h-[250px]"
+            className="mx-auto aspect-square max-h-[250px] max-lg:max-h-[350px]"
           >
             <PieChart>
               <ChartTooltip

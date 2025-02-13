@@ -11,12 +11,7 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { Button } from "./ui/button";
-import {
-  BadgeDollarSignIcon,
-  CreditCardIcon,
-  LayoutDashboardIcon,
-  MenuIcon,
-} from "lucide-react";
+import { CreditCardIcon, LayoutDashboardIcon, MenuIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { UserButton } from "@clerk/nextjs";
 
@@ -39,7 +34,16 @@ const NavbarMobile = () => {
         <SheetContent>
           <SheetTitle>Menu</SheetTitle>
           <SheetDescription className="border-b border-solid py-2">
-            <UserButton showName />
+            <UserButton
+              showName
+              appearance={{
+                elements: {
+                  userButtonPopoverCard: {
+                    pointerEvents: "auto",
+                  },
+                },
+              }}
+            />
           </SheetDescription>
           <SheetHeader>
             <Button
@@ -57,19 +61,6 @@ const NavbarMobile = () => {
                 }
               >
                 Dashboard
-              </Link>
-            </Button>
-            <Button variant="ghost" size="sm" className="flex justify-start">
-              <BadgeDollarSignIcon />
-              <Link
-                href="/transactions"
-                className={
-                  pathname === "/transactions"
-                    ? "font-bold text-primary"
-                    : "text-muted-foreground"
-                }
-              >
-                Transações
               </Link>
             </Button>
             <Button

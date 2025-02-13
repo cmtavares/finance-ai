@@ -1,8 +1,12 @@
+"use client";
+
 import { Button } from "@/app/_components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/app/_components/ui/card";
 import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import { TRANSACTION_PAYMENT_METHOD_ICONS } from "@/app/_constants/transactions";
 import { formatCurrency } from "@/app/_utils/currency";
+import DeleteTransactionButton from "@/app/transactions/_components/delete-transaction-button";
+import EditTransactionButton from "@/app/transactions/_components/edit-transaction-button";
 import { Transaction, TransactionType } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,7 +36,9 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle className="font-bold">Últimas Transações</CardTitle>
         <Button variant="outline" className="rounded-full font-bold" asChild>
-          <Link href="/transactions">Ver mais</Link>
+          <Link href="/transactions" className="max-lg:hidden">
+            Ver mais
+          </Link>
         </Button>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -41,8 +47,8 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
             key={transaction.id}
             className="flex items-center justify-between"
           >
-            <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-white">
+            <div className="flex items-center gap-3 max-lg:gap-2">
+              <div className="rounded-lg bg-white bg-opacity-[3%] p-3 text-white max-lg:p-2">
                 <Image
                   src={`/${TRANSACTION_PAYMENT_METHOD_ICONS[transaction.paymentMethod]}`}
                   height={20}
@@ -65,6 +71,10 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
               {getAmountPrefix(transaction)}
               {formatCurrency(Number(transaction.amount))}
             </p>
+            <div className="flex flex-row lg:hidden">
+              <EditTransactionButton transaction={transaction} />
+              <DeleteTransactionButton transactionId={transaction.id} />
+            </div>
           </div>
         ))}
       </CardContent>
